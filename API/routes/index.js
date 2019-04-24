@@ -1,10 +1,10 @@
 const express = require('express')
 const api = express.Router()
 
-const Hello = require('../controllers/index')
+const coche = require('./scoche')
 const test = require('./test')
 
 api.use('/test', test)
-api.get('/', Hello.holaMundo)
+api.use('/coche', coche)
 
 module.exports = api

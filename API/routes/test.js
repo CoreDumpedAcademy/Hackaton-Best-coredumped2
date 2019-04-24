@@ -6,5 +6,4 @@ const testController = require('../controllers/testController');
 router.get('/', testController.testGetData);
 router.post('/', testController.testCreate);
 
-
 module.exports = router;
