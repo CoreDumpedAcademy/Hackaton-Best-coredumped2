@@ -7,7 +7,10 @@ const SvidaSchema = Schema ({
     nombre: {pila: String, apellidos: String},
     dni: {type: String, unique: true},
     nacido: Date,
-    fumador: Boolean
+    fumador: Boolean,
+    condiciones: String,
+    hijos: Number,
+    hereditarias: String
 })
 
 module.exports = mongoose.model('Svida', SvidaSchema)
