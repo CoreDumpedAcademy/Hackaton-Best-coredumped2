@@ -1,7 +1,9 @@
-const { ActivityTypes } = require('botbuilder');
+const { ActivityTypes, CardFactory } = require('botbuilder');
 const { Recognizer } = require('./lib');
 const trainnlp = require('./train-nlp');
 const axios = require('axios');
+const cards = require('./Cards/carFormCard')
+const card2 = require('./Cards/profile')
 
 class MyBot {
     constructor() {
@@ -14,11 +16,20 @@ class MyBot {
         if (turnContext.activity.type === ActivityTypes.Message) {
             try {
                 const result = await this.recognizer.recognize(turnContext);
+                console.log(result.intent)
+                if(result.intent == "user.contratar"){
+                    turnContext.sendActivity({ attachments: [CardFactory.adaptiveCard(card2)] });
+                }
+                
+                if(result.intent == "user.coche"){
+                    turnContext.sendActivity({ attachments: [CardFactory.adaptiveCard(cards)] });
+                }
+
                 await turnContext.sendActivity(result.answer);
                 if (turnContext.activity.value !== undefined) {
                     console.log(turnContext.activity.value);
                     //turnContext.sendActivity({ attachments: [CardFactory.adaptiveCard(cards)] });
-                    axios.post('http://localhost:3003/coche', turnContext.activity.value)
+                    axios.post('http://localhost:3003/api/coche', turnContext.activity.value)
                         .then(response => {
                             console.log(response);
                         })

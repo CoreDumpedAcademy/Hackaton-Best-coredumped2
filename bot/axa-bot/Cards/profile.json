@@ -1,0 +1,43 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Seleccione un tipo de póliza"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "placeholder": "Elige una opción",
+      "id": "poliza",
+      "style": "compact",
+      "isMultiSelect": false,
+      "value": "1",
+      "choices": [
+        {
+          "title": "Vida",
+          "value": "vida"
+        },
+        {
+          "title": "Coche",
+          "value": "coche"
+        },
+        {
+          "title": "Moto",
+          "value": "moto"
+        },
+        {
+          "title": "Hogar",
+          "value": "hogar"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "OK"
+    }
+  ]
+}
