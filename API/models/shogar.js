@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const ShogarSchema = Schema ({
-    nombre: {pila: String, apellidos: String},
+    nombre: String,
     dni: {type: String, unique: true},
     ocupantes: Number,
     tamano: Number,
