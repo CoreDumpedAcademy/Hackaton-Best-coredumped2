@@ -1,0 +1,94 @@
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "size": "medium",
+                            "weight": "bolder",
+                            "text": "Introduce tu información"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Nombre",
+                            "wrap": true
+                        },
+                        {
+                            "type": "Input.Text",
+                            "id": "nombre"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "DNI",
+                            "wrap": true
+                        },
+                        {
+                            "type": "Input.Text",
+                            "id": "dni",
+                            "placeholder": "00000000A"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Fecha de nacimiento"
+                        },
+                        {
+                            "type": "Input.Date",
+                            "title": "New Input.Toggle",
+                            "id": "nacido"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Matrícula"
+                        },
+                        {
+                            "type": "Input.Text",
+                            "id": "matricula"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Marca\n"
+                        },
+                        {
+                            "type": "Input.Text",
+                            "title": "New Input.Toggle",
+                            "id": "marca"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Modelo"
+                        },
+                        {
+                            "type": "Input.Text",
+                            "title": "New Input.Toggle",
+                            "id": "modelo"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Años con el carnet"
+                        },
+                        {
+                            "type": "Input.Text",
+                            "title": "New Input.Toggle",
+                            "id": "anosCarnet"
+                        }
+                    ],
+                    "width": 2
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "id": "CarInfo",
+            "title": "Submit"
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0"
+}
