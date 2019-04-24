@@ -31,10 +31,11 @@ class MyBot {
                     //turnContext.sendActivity({ attachments: [CardFactory.adaptiveCard(cards)] });
                     axios.post('http://localhost:3003/api/coche', turnContext.activity.value)
                         .then(response => {
-                            console.log(response);
+                            console.log(response.data);
+                            turnContext.sendActivity('Información guardada');
                         })
                         .catch(error => {
-                            console.log(error);
+                            console.log(error.data);
                         });
                 }
             } catch (ex) {
