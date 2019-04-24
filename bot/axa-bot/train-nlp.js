@@ -384,6 +384,42 @@ module.exports = async function trainnlp(manager, say) {
   manager.addDocument('en', 'I need some advice', 'user.needsadvice');
   manager.addDocument('en', 'can you give me some advice', 'user.needsadvice');
   manager.addDocument('en', 'what should I do', 'user.needsadvice');
+
+  manager.addDocument('en', 'Hola', 'user.saludo')
+  manager.addDocument('en', 'Buenas', 'user.saludo')
+  manager.addDocument('en', 'Que tal', 'user.saludo')
+
+  manager.addDocument('en', 'Adios', 'user.salida')
+  manager.addDocument('en', 'Hasta luego', 'user.salida')
+  manager.addDocument('en', 'quit', 'user.salida')
+
+  manager.addDocument('en', 'Contratar un seguro', 'user.contratar')
+  manager.addDocument('en', 'Me gustaría contratar', 'user.contratar')
+  manager.addDocument('en', 'Quiero asegurarme', 'user.contratar')
+
+  manager.addDocument('en', 'Ayuda', 'user.ayuda')
+  manager.addDocument('en', 'No entiendo', 'user.ayuda')
+
+  manager.addDocument('en', 'telefono', 'user.telefono')
+  manager.addDocument('en', 'hablar con un operador', 'user.telefono')
+  manager.addDocument('en', 'Agente', 'user.telefono')
+
+  manager.addDocument('en', 'borrar', 'user.borrar')
+  manager.addDocument('en', 'eliminar poliza', 'user.borrar')
+  manager.addDocument('en', 'cancelar seguro', 'user.borrar')
+
+  manager.addDocument('en', 'modificar poliza', 'user.modificar')
+  manager.addDocument('en', 'cambiar seguro', 'user.modificar')
+  manager.addDocument('en', 'editar', 'user.modificar')
+
+  manager.addDocument('en', 'mostrar poliza', 'user.ver')
+  manager.addDocument('en', 'ver seguro', 'user.ver')
+  manager.addDocument('en', 'información de mis seguros', 'user.ver')
+
+  manager.addDocument('en', 'He tenido un accidente', 'user.accidente')
+  manager.addDocument('en', 'Gestionar siniestro', 'user.accidente')
+
+
   say('Training, please wait..');
   const hrstart = process.hrtime();
   await manager.train();
@@ -787,5 +823,27 @@ module.exports = async function trainnlp(manager, say) {
     'user.needsadvice',
     "I'm not sure I'll have the best answer, but I'll try"
   );
+
+
+  manager.addAnswer('en', 'user.saludo', '¡Saludos, humano!');
+  manager.addAnswer('en', 'user.saludo', '¡Hola!');
+  manager.addAnswer('en', 'user.saludo', 'Que tal');
+  
+  manager.addAnswer('en', 'user.salida', 'Hasta luego');
+  manager.addAnswer('en', 'user.salida', 'Adios');
+  manager.addAnswer('en', 'user.salida', 'Nos vemos');
+
+  manager.addAnswer('en', 'user.contratar', "Por favor, selecciona la poliza que quieres contratar.")
+  manager.addAnswer('en', 'user.ayuda', "Estos son algunos ejemplos de operaciones que puedo realizar por ti:\n - Crear seguro/póliza\n - Cancelar póliza\n - Editar datos\n - Obtener datos de póliza.\n\nSimplemente escribe la operación que quieras realizar y te guiaré por ella")
+
+  manager.addAnswer('en', 'user.telefono', "Nuestro teléfono de asistencia 24 horas es 902 011 000, pero si necesitas ayuda con el manejo de pólizas yo te puedo guiar.")
+
+  manager.addAnswer('en', 'user.borrar', "Por favor selecciona la póliza que quieras cancelar")
+  manager.addAnswer('en', 'user.modificar', "Selecciona la póliza que quieres editar")
+  manager.addAnswer('en', 'user.ver', "Estás a punto de ver tus pólizas contratadas.")
+
+  manager.addAnswer('en', 'user.accidente', "Entiendo, puedo crear un registro del accidente asociado a tu póliza o puedes escribir agente para ofrecerte asistencia telefónica de axa")
+
+
   manager.save('./model.nlp');
 };

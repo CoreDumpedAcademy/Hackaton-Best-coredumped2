@@ -17,6 +17,7 @@ class MyBot {
                 await turnContext.sendActivity(result.answer);
                 if (turnContext.activity.value !== undefined) {
                     console.log(turnContext.activity.value);
+                    //turnContext.sendActivity({ attachments: [CardFactory.adaptiveCard(cards)] });
                     axios.post('http://localhost:3003/coche', turnContext.activity.value)
                         .then(response => {
                             console.log(response);
