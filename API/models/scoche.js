@@ -7,7 +7,9 @@ const ScocheSchema = Schema ({
     nombre: String,
     dni: {type: String, unique: true},
     matricula: String,
-    vehiculo: String,
+    modelo: String,
+    marca:String,
+    nacido: String,
     anosCarnet: Number
 })
 

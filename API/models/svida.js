@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const SvidaSchema = Schema ({
     nombre: String,
     dni: {type: String, unique: true},
-    nacido: Number,
+    nacido: String,
     fumador: Boolean,
     condiciones: String,
     hijos: Number,
