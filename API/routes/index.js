@@ -5,7 +5,7 @@ const coche = require('./scoche')
 const moto = require('./smoto')
 const test = require('./test')
 const vida = require('./svida')
-const hogar = require('./hogar')
+const hogar = require('./shogar')
 
 api.use('/test', test)
 api.use('/coche', coche)
