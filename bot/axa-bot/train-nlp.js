@@ -393,6 +393,9 @@ module.exports = async function trainnlp(manager, say) {
   manager.addDocument('en', 'Hasta luego', 'user.salida')
   manager.addDocument('en', 'quit', 'user.salida')
 
+  manager.addDocument('en', 'Seguro de coche', 'user.coche')
+  manager.addDocument('en', 'Contratar un seguro de coches', 'user.coche')
+
   manager.addDocument('en', 'Contratar un seguro', 'user.contratar')
   manager.addDocument('en', 'Me gustaría contratar', 'user.contratar')
   manager.addDocument('en', 'Quiero asegurarme', 'user.contratar')
@@ -426,6 +429,8 @@ module.exports = async function trainnlp(manager, say) {
   const hrend = process.hrtime(hrstart);
   console.info('Trained (hr): %ds %dms', hrend[0], hrend[1] / 1000000);
   say('Trained!');
+
+  manager.addAnswer('en', 'user.coche', 'Mostrando información de los seguros de coche')
 
   manager.addAnswer('en', 'agent.acquaintance', "I'm a virtual agent");
   manager.addAnswer(
