@@ -15,10 +15,10 @@ class MyBot {
             try {
                 const result = await this.recognizer.recognize(turnContext);
                 await turnContext.sendActivity(result.answer);
-                if (turnContext.activity.value !== undefined) {
+                if (turnContext.activity.value !== undefined && turnContext.activity.value.nombre !== undefined) {
                     console.log(turnContext.activity.value);
                     //turnContext.sendActivity({ attachments: [CardFactory.adaptiveCard(cards)] });
-                    axios.post('http://localhost:3003/coche', turnContext.activity.value)
+                    axios.post('http://localhost:3003/api/coche', turnContext.activity.value)
                         .then(response => {
                             console.log(response);
                         })
