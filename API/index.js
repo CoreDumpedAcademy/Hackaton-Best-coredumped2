@@ -1,5 +1,5 @@
 const colors = require('colors')
-const port = process.env.port || 3000
+const port = process.env.port || 3003
 const app = require('./app')
 const nodemon = require('nodemon')
 const mongoose = require('mongoose')
