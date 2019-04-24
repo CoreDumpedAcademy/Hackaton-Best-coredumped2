@@ -21,6 +21,7 @@
         "botbuilder": "^4.3.4",
         "botframework-config": "^4.2.0",
         "dotenv": "^6.2.0",
+        "express": "^4.16.4",
         "node-nlp": "^3.0.3",
         "restify": "^7.2.3"
     },
