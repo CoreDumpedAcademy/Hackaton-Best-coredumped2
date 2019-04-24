@@ -1,4 +1,4 @@
-import axios from 'axios';
+const axios = require('axios');
 
 function sendCarInfo(form) {
     axios.post('http://localhost:3003/coche', form)

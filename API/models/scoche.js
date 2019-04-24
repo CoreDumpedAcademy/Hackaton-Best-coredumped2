@@ -10,7 +10,7 @@ const ScocheSchema = Schema ({
     modelo: String,
     marca:String,
     nacido: String,
-    anosCarnet: Number
+    anosCarnet: String
 })
 
 module.exports = mongoose.model('Scoche', ScocheSchema)
